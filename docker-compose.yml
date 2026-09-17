@@ -1,0 +1,12 @@
+services:
+  python3:
+    build: .
+    ports:
+      - "5001:80"
+    volumes:
+      - .:/app
+    environment:
+      FLASK_APP: app.py          # ← apps.app から app.py に変更
+      FLASK_ENV: development
+    tty: true          # コンテナの起動状態を維持
+    stdin_open: true   # 対話入力を保持
